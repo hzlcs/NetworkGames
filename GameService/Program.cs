@@ -17,19 +17,20 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 app.MapControllers();
+app.MapHub<GameHub>("/GameHub", v => v.Transports = Microsoft.AspNetCore.Http.Connections.HttpTransportType.WebSockets);
+app.MapHub<MatchHub>("/MatchHub", v => v.Transports = Microsoft.AspNetCore.Http.Connections.HttpTransportType.WebSockets);
 
-app.MapHub<GameHub>("/GameHub");
-app.MapHub<MatchHub>("/MatchHub");
-app.Run();
+app.Run("http://*:10123");
 
 static void ConfigureService(IServiceCollection services)
 {
     services.AddControllers();
+    services.AddLogging(v => v.AddSimpleConsole());
     services.AddEndpointsApiExplorer();
     services.AddSwaggerGen();
     services.AddSignalR();
     services.AddSingleton<IGameRepository, GameRepository>();
     services.AddSingleton<IMatchGroupManager, MatchGroupManager>();
     services.AddSingleton<IMatchManager, MatchManager>();
-    
+
 }

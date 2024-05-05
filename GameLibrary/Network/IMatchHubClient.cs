@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GameLibrary.Network
 {
-    public interface IMatchHubClient
+    public interface IMatchHubClient 
     {
-        void MatchConfirmed(string gameId);
+        void MatchConfirmed();
 
-        void MatchCanceled(bool timeout);
+        void MatchCanceled();
 
-        void Matched(string matchId);
+        void Matched();
     }
 }

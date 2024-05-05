@@ -4,12 +4,13 @@ namespace GameService.Interfaces.Test.Matchs
 {
     public interface IMatchManager
     {
-        IMatcher Add(IPlayer player);
-        IMatcher Add(string connectionId, string playerId);
+        IMatcher Add(IMatcher matcher);
+        IMatcher Add(string connectionId, long playerId);
         void Remove(string connectionId);
-        event GameMatchedEventHandler OnMatchSuccsee;
         string CreateMatchId();
+        void Confirm(string connectionId);
+        void Cancel(string connectionId);
     }
 
-    public delegate void GameMatchedEventHandler(IMatcher[] matchers, string matchId);
+    public delegate void GameMatchedCallback(IMatcher[] matchers);
 }

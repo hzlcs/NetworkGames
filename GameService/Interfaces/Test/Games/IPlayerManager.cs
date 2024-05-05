@@ -6,9 +6,19 @@
 
         bool TryGetPlayerByConnectionId(string connectionId, out IPlayer? player);
 
-        void RemovePlayerByConnectionId(string connectionId);
+        bool TryGetPlayerByPlayerId(long playerId, out IPlayer? player);
 
-        IPlayer CreatePlayer(string connectionId, string playerId);
+        IPlayer? PlayerReconnected(long playerId);
+
+        IPlayer? PlayerDisconnected(long playerId);
+
+        IPlayer? RemovePlayerByConnectionId(string connectionId);
+
+        IPlayer? RemovePlayerByPlayerId(long playerId);
+
+        IPlayer CreatePlayer(string connectionId, long playerId);
+
+        IPlayer CreatePlayer(IPlayer player);
 
         void AddPlayer(IPlayer player);
     }

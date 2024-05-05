@@ -14,7 +14,7 @@ namespace GameService.Entity.DBEntity.Entity
 
         public UserInfo ToUserInfo()
         {
-            return new UserInfo(Id.ToString(), UserName, UserCode);
+            return new UserInfo(Id, UserName, UserCode);
         }
     }
 }

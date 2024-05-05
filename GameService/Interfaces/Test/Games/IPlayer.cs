@@ -2,7 +2,8 @@
 {
     public interface IPlayer
     {
-        string PlayerId { get; }
-        string ConnectionId { get; }
+        long PlayerId { get; }
+        string ConnectionId { get; set; }
+        bool LoseConnection { get; set; }
     }
 }

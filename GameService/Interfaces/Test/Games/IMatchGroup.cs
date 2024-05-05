@@ -4,14 +4,12 @@ namespace GameService.Interfaces.Test.Games
 {
     public interface IMatchGroupManager
     {
-        event MatchGroupCancelEventHandler OnMatchGroupCanceled;
-        event MatchGroupConfirmEventHandler OnMatchGroupConfirmed;
+        event MatchGroupTimeoutEventHander? MatchGroupTimeoutCanceled;
         string Add(IMatcher[] matcher);
-        void Confirm(string matchId, string connectionId);
-        void Cancel(string matchId, string connectionId);
+        IMatcher[]? Confirm(string connectionId);
+        IMatcher[]? Cancel(string connectionId);
     }
 
-    public delegate void MatchGroupConfirmEventHandler(IMatcher[] matchers, IGame game);
-    public delegate void MatchGroupCancelEventHandler(IMatcher[] matchers, bool timeout);
+    public delegate void MatchGroupTimeoutEventHander(IMatcher[] matchers);
 
 }

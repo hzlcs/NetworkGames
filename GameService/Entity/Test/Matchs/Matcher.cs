@@ -4,25 +4,29 @@ using GameService.Interfaces.Test.Matchs;
 
 namespace GameService.Entity.Test.Matchs
 {
-    public sealed class Matcher(IPlayer player) : IMatcher
+    public sealed class Matcher(string connectionId, long playerId) : IMatcher
     {
         private volatile bool disposed;
-
-        IPlayer IMatcher.Player => player;
 
         public bool Matched { get; set; }
 
         bool IMatcher.Disposed => disposed;
 
-        string IPlayer.ConnectionId => player.ConnectionId;
-        string IPlayer.PlayerId => player.PlayerId;
+        string IPlayer.ConnectionId
+        {
+            get => connectionId;
+            set => connectionId = value;
+        }
+        long IPlayer.PlayerId => playerId;
+        bool IPlayer.LoseConnection { get; set; }
 
         public bool Confirmed { get; set; }
-
+        public string? MatchId { get; set; }
 
         void IDisposable.Dispose()
         {
             disposed = true;
+            ((IPlayer)this).LoseConnection = true;
         }
     }
 }

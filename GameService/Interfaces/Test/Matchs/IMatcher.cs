@@ -4,9 +4,9 @@ namespace GameService.Interfaces.Test.Matchs
 {
     public interface IMatcher : IPlayer, IDisposable
     {
-        IPlayer Player { get; }
         bool Disposed { get; }
         bool Matched { get; set; }
         bool Confirmed { get; set; }
+        string? MatchId { get; set; }
     }
 }

@@ -4,13 +4,18 @@ namespace GameService.Entity.Test.Games
 {
     public class Player : IPlayer
     {
-        private readonly string connectionId;
-        private readonly string playerId;
-        string IPlayer.ConnectionId => connectionId;
+        private string connectionId;
+        private readonly long playerId;
 
-        string IPlayer.PlayerId => playerId;
+        string IPlayer.ConnectionId
+        {
+            get => connectionId;
+            set => connectionId = value;
+        }
+        long IPlayer.PlayerId => playerId;
+        bool IPlayer.LoseConnection { get; set; }
 
-        public Player(string connectionId, string playerId)
+        public Player(string connectionId, long playerId)
         {
             this.connectionId = connectionId;
             this.playerId = playerId;
