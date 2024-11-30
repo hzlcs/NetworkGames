@@ -1,45 +1,37 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GameClient.Utility.Network;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using GameLibrary.Network;
 using GameClient.Utility.Interface;
+using GameClient.Utility.Network;
 
-namespace GameClient.Utility.Network.Tests
+namespace GameClientTests.Utility.Network
 {
     [TestClass()]
     public class MatchServiceTests
     {
-        static IServiceProvider serviceProvider;
+        private static readonly IServiceProvider ServiceProvider;
 
         static MatchServiceTests()
         {
             ServiceCollection services = new();
             services.AddTransient<IMatchHubClientManager, TestMatchHubClient>();
-            serviceProvider = services.BuildServiceProvider();
+            ServiceProvider = services.BuildServiceProvider();
         }
 
         [TestMethod()]
         [DataRow(4)]
-        public void MatchServiceTest(int count)
+        public async void MatchServiceTest(int count)
         {
-            using IServiceScope scope = serviceProvider.CreateScope();
+            using IServiceScope scope = ServiceProvider.CreateScope();
             IMatchHubClientManager[] client = Enumerable.Repeat(0, count)
-                .Select(_ => serviceProvider.GetRequiredService<IMatchHubClientManager>()).ToArray();
-            if (client.Any(v => v is null))
-                return;
+                .Select(_ => ServiceProvider.GetRequiredService<IMatchHubClientManager>()).ToArray();
+
             foreach(var v in client)
             {
                 MatchService service = new(v);
-                service.StartAsync().Wait();
+                await service.StartAsync(default);
             }
                     
             Task.Delay(10000).Wait();
-            scope.Dispose();
         }
 
         public class TestMatchHubClient : IMatchHubClientManager
@@ -50,11 +42,10 @@ namespace GameClient.Utility.Network.Tests
                 Log(playerId + " Created");
             }
 
-            private readonly string playerId = Random.Shared.Next(1, 1000).ToString();
+            private readonly long playerId = Random.Shared.Next(1, 1000);
 
-            string IMatchHubClientManager.PlayerId => playerId;
+            long IMatchHubClientManager.PlayerId => playerId;
 
-            IMatchHubService IMatchHubClientManager.MatchHubService { get; set; } = null!;
 
             void IMatchHubClient.MatchCanceled()
             {

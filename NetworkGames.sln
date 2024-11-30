@@ -13,6 +13,24 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameClient", "GameClient\Ga
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameClientTests", "GameClientTests\GameClientTests.csproj", "{BD433EB8-59F2-4379-9BD0-72AACC53C01D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.GameClient", "Avalonia.GameClient\Avalonia.GameClient\Avalonia.GameClient.csproj", "{5752FCF5-8B29-40FF-8BB6-3E73B3376D69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.GameClient.Android", "Avalonia.GameClient\Avalonia.GameClient.Android\Avalonia.GameClient.Android.csproj", "{6F215533-78FF-4EBB-BBB8-0ABD9092E61B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.GameClient.Desktop", "Avalonia.GameClient\Avalonia.GameClient.Desktop\Avalonia.GameClient.Desktop.csproj", "{A1AA4B06-DAFF-4BA0-87A9-28B3F814777F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.GameClient.iOS", "Avalonia.GameClient\Avalonia.GameClient.iOS\Avalonia.GameClient.iOS.csproj", "{5E8F0FBC-1AF3-496C-B153-6185E4F7CD87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.GameClient.Browser", "Avalonia.GameClient\Avalonia.GameClient.Browser\Avalonia.GameClient.Browser.csproj", "{0CFDEEA9-24CD-464A-B231-95859E821FFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Avalonia", "Avalonia", "{87DA9BF3-FB09-4A50-B94B-68A151BA4C6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameService.Abstraction", "GameService.Abstraction\GameService.Abstraction.csproj", "{7D5168C8-9B0C-49CE-A9FF-85406B4C2B09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tool", "Tool", "{E13FC77E-2FFB-4CED-BCCD-4C914B6DADF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameService.Client", "GameService.Client\GameService.Client.csproj", "{6627618B-3D6E-4608-AD60-082103E090C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,11 +57,46 @@ Global
 		{BD433EB8-59F2-4379-9BD0-72AACC53C01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD433EB8-59F2-4379-9BD0-72AACC53C01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD433EB8-59F2-4379-9BD0-72AACC53C01D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5752FCF5-8B29-40FF-8BB6-3E73B3376D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5752FCF5-8B29-40FF-8BB6-3E73B3376D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5752FCF5-8B29-40FF-8BB6-3E73B3376D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5752FCF5-8B29-40FF-8BB6-3E73B3376D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F215533-78FF-4EBB-BBB8-0ABD9092E61B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F215533-78FF-4EBB-BBB8-0ABD9092E61B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F215533-78FF-4EBB-BBB8-0ABD9092E61B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F215533-78FF-4EBB-BBB8-0ABD9092E61B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1AA4B06-DAFF-4BA0-87A9-28B3F814777F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1AA4B06-DAFF-4BA0-87A9-28B3F814777F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1AA4B06-DAFF-4BA0-87A9-28B3F814777F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1AA4B06-DAFF-4BA0-87A9-28B3F814777F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E8F0FBC-1AF3-496C-B153-6185E4F7CD87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E8F0FBC-1AF3-496C-B153-6185E4F7CD87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E8F0FBC-1AF3-496C-B153-6185E4F7CD87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E8F0FBC-1AF3-496C-B153-6185E4F7CD87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CFDEEA9-24CD-464A-B231-95859E821FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CFDEEA9-24CD-464A-B231-95859E821FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CFDEEA9-24CD-464A-B231-95859E821FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CFDEEA9-24CD-464A-B231-95859E821FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D5168C8-9B0C-49CE-A9FF-85406B4C2B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D5168C8-9B0C-49CE-A9FF-85406B4C2B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D5168C8-9B0C-49CE-A9FF-85406B4C2B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D5168C8-9B0C-49CE-A9FF-85406B4C2B09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6627618B-3D6E-4608-AD60-082103E090C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6627618B-3D6E-4608-AD60-082103E090C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6627618B-3D6E-4608-AD60-082103E090C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6627618B-3D6E-4608-AD60-082103E090C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0ADA71E0-0DB2-4F10-957E-660E8ACEFC3C}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5E8F0FBC-1AF3-496C-B153-6185E4F7CD87} = {87DA9BF3-FB09-4A50-B94B-68A151BA4C6A}
+		{A1AA4B06-DAFF-4BA0-87A9-28B3F814777F} = {87DA9BF3-FB09-4A50-B94B-68A151BA4C6A}
+		{0CFDEEA9-24CD-464A-B231-95859E821FFD} = {87DA9BF3-FB09-4A50-B94B-68A151BA4C6A}
+		{6F215533-78FF-4EBB-BBB8-0ABD9092E61B} = {87DA9BF3-FB09-4A50-B94B-68A151BA4C6A}
+		{5752FCF5-8B29-40FF-8BB6-3E73B3376D69} = {87DA9BF3-FB09-4A50-B94B-68A151BA4C6A}
 	EndGlobalSection
 EndGlobal

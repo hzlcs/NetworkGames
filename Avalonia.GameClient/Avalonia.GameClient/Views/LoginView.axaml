@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Avalonia.GameClient.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Avalonia.GameClient.Views.LoginView"
+             x:DataType="vm:LoginViewModel" Width="300">
+    <StackPanel Margin="20">
+        <TextBlock Margin="0 5">UserCode:</TextBlock>
+        <TextBox Watermark="Enter your userCode" Text="{Binding UserCode}"/>
+        <TextBlock Margin="0 5">Password:</TextBlock>
+        <TextBox PasswordChar="*" Watermark="Enter your password" Text="{Binding Password}"/>
+        <StackPanel Orientation="Horizontal" Margin="0,20">
+            <Button Grid.Column="0" Width="100" Margin="0,0,20,0" Command="{Binding LoginCommand}" HorizontalContentAlignment="Center">登录</Button>
+            <Button Grid.Column="1" Width="100" Margin="40,0,0,0" Command="{Binding RegisterCommand}" HorizontalContentAlignment="Center">注册</Button>
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>

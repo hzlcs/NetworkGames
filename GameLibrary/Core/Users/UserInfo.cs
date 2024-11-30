@@ -11,5 +11,6 @@ namespace GameLibrary.Core.Users
         public long UserId { get; set; } = userId;
         public string UserName { get; set; } = userName;
         public string UserCode { get; set; } = userCode;
+
     }
 }

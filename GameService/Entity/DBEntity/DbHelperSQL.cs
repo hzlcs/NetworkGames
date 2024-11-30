@@ -21,7 +21,7 @@ namespace GameService.Entity.DBEntity
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Users>();
+            modelBuilder.Entity<User>();
             base.OnModelCreating(modelBuilder);
         }
     }
