@@ -22,4 +22,8 @@
     <None Remove="Network\Api\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tool\MessageHub.Abstraction\MessageHub.Abstraction.csproj" />
+  </ItemGroup>
+
 </Project>

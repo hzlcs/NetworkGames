@@ -11,6 +11,8 @@
         <TextBox Watermark="Enter your userCode" Text="{Binding UserCode}"/>
         <TextBlock Margin="0 5">Password:</TextBlock>
         <TextBox PasswordChar="*" Watermark="Enter your password" Text="{Binding Password}"/>
+        <TextBlock Margin="0 5">UserName:</TextBlock>
+        <TextBox Watermark="Enter your userName" Text="{Binding UserName}"/>
         <StackPanel Orientation="Horizontal" Margin="0,20">
             <Button Grid.Column="0" Width="100" Margin="0,0,20,0" Command="{Binding LoginCommand}" HorizontalContentAlignment="Center">登录</Button>
             <Button Grid.Column="1" Width="100" Margin="40,0,0,0" Command="{Binding RegisterCommand}" HorizontalContentAlignment="Center">注册</Button>

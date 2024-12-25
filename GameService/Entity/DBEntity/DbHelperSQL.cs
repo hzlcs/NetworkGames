@@ -11,14 +11,9 @@ namespace GameService.Entity.DBEntity
 
 
 
-    public class MyDbContext : DbContext
+    public class MyDbContext(DbContextOptions<MyDbContext> options) : DbContext(options)
     {
-        static int count = 0;
-        public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
-        {
-            ++count;
-        }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>();

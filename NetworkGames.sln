@@ -31,6 +31,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tool", "Tool", "{E13FC77E-2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameService.Client", "GameService.Client\GameService.Client.csproj", "{6627618B-3D6E-4608-AD60-082103E090C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageHub.Abstraction", "Tool\MessageHub.Abstraction\MessageHub.Abstraction.csproj", "{A1E0A182-FC12-4352-A5B4-EF697C4C0503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageHub.SignalR.Client", "Tool\MessageHub.SignalR.Client\MessageHub.SignalR.Client.csproj", "{EA33135A-4631-48B3-9CB3-1AA4FB7E51C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +89,14 @@ Global
 		{6627618B-3D6E-4608-AD60-082103E090C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6627618B-3D6E-4608-AD60-082103E090C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6627618B-3D6E-4608-AD60-082103E090C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E0A182-FC12-4352-A5B4-EF697C4C0503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E0A182-FC12-4352-A5B4-EF697C4C0503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E0A182-FC12-4352-A5B4-EF697C4C0503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E0A182-FC12-4352-A5B4-EF697C4C0503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA33135A-4631-48B3-9CB3-1AA4FB7E51C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA33135A-4631-48B3-9CB3-1AA4FB7E51C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA33135A-4631-48B3-9CB3-1AA4FB7E51C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA33135A-4631-48B3-9CB3-1AA4FB7E51C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,5 +110,7 @@ Global
 		{0CFDEEA9-24CD-464A-B231-95859E821FFD} = {87DA9BF3-FB09-4A50-B94B-68A151BA4C6A}
 		{6F215533-78FF-4EBB-BBB8-0ABD9092E61B} = {87DA9BF3-FB09-4A50-B94B-68A151BA4C6A}
 		{5752FCF5-8B29-40FF-8BB6-3E73B3376D69} = {87DA9BF3-FB09-4A50-B94B-68A151BA4C6A}
+		{A1E0A182-FC12-4352-A5B4-EF697C4C0503} = {E13FC77E-2FFB-4CED-BCCD-4C914B6DADF4}
+		{EA33135A-4631-48B3-9CB3-1AA4FB7E51C2} = {E13FC77E-2FFB-4CED-BCCD-4C914B6DADF4}
 	EndGlobalSection
 EndGlobal

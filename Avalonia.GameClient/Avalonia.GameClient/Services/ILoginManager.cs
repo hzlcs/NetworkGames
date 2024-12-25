@@ -6,14 +6,17 @@ using Avalonia.Controls.Notifications;
 using GameLibrary.Utility;
 using GameService.Abstraction;
 using GameLibrary;
+using GameLibrary.Core.Users;
+using GameService.Abstraction.Controllers;
 
 namespace Avalonia.GameClient.Services;
 
-public interface ILoginManager
+
+public interface ILoginManager : IUserManager
 {
     Task<BooleanResult> LoginAsync(string userCode, string password);
     
-    Task<BooleanResult> RegisterAsync(string userCode, string password);
+    Task<BooleanResult> RegisterAsync(string userName, string userCode, string password);
 }
 
 public class LoginManager(IUserController userController, IMessageBox messageBox) : ILoginManager
@@ -27,6 +30,8 @@ public class LoginManager(IUserController userController, IMessageBox messageBox
             var res = await userController.Login(userCode, password, cts.Token);
             if (res?.Code == 0)
             {
+                CurrentUser = res.Data!.UserInfo;
+                Token = res.Data.Token;
                 messageBox.Popup("登录成功", NotificationType.Success);
                 return BooleanResult.True();
             }
@@ -44,12 +49,12 @@ public class LoginManager(IUserController userController, IMessageBox messageBox
         }
     }
 
-    public async Task<BooleanResult> RegisterAsync(string userCode, string password)
+    public async Task<BooleanResult> RegisterAsync(string userName, string userCode, string password)
     {
         CancellationTokenSource cts = new (3000);
         try
         {
-            var res = await userController.Register(userCode, password, cts.Token);
+            var res = await userController.Register(userName, userCode, password, cts.Token);
             if (res?.Code == 0)
             {
                 messageBox.Popup("注册成功", NotificationType.Success);
@@ -68,4 +73,7 @@ public class LoginManager(IUserController userController, IMessageBox messageBox
             cts.Dispose();
         }
     }
+
+    public UserInfo CurrentUser { get; private set; } = null!;
+    public string Token { get; private set; } = null!;
 }

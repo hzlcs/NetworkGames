@@ -2,7 +2,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="clr-namespace:Avalonia.GameClient.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:DataType="vm:GameLoadViewModel"
              x:Class="Avalonia.GameClient.Views.GameLoadView">
-    Welcome to Avalonia!
+    <Grid RowDefinitions="*,150">
+        <Border BorderThickness="2" CornerRadius="10" BorderBrush="Aqua">
+
+        </Border>
+        <ProgressBar Grid.Row="1"
+            Margin="5,0,5,0"
+            Maximum="{Binding Maximum}"
+            Minimum="{Binding Minimum}"
+            ShowProgressText="True"
+            Value="{Binding Value}" />
+    </Grid>
 </UserControl>

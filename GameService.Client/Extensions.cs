@@ -1,4 +1,5 @@
 using GameService.Abstraction;
+using GameService.Abstraction.Controllers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace GameService.Client;

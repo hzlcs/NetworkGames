@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Avalonia.GameClient.ViewModels"
+             xmlns:view="clr-namespace:Avalonia.GameClient.Views"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Avalonia.GameClient.Views.GameMainView" x:DataType="vm:GameMainViewModel">
+    <Border>
+        <Grid RowDefinitions="*,100">
+            <StackPanel VerticalAlignment="Stretch" Orientation="Horizontal">
+                <Button Content="开始游戏"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Button Content="Chat" Width="135" HorizontalContentAlignment="Center">
+                    <Button.Flyout>
+                        <Flyout Placement="TopEdgeAlignedLeft">
+                            <Border>
+                                <view:ChatView DataContext="{Binding ChatViewModel}"/>
+                            </Border>
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

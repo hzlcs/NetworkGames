@@ -5,9 +5,9 @@ using Avalonia.Markup.Xaml;
 
 namespace Avalonia.GameClient.Views;
 
-public partial class GameLoadView : UserControl, IGamePage
+public partial class GameMainView : UserControl, IGamePage
 {
-    public GameLoadView()
+    public GameMainView()
     {
         InitializeComponent();
     }

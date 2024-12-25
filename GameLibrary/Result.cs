@@ -8,7 +8,6 @@ public readonly struct Result
 
     public bool IsSuccess => Exception is null;
 
-    public bool IsFail => Exception is not null;
 
     private Result(object? data)
     {
@@ -57,7 +56,6 @@ public readonly struct Result<T>
 
     public bool IsSuccess => Exception is null;
 
-    public bool IsFail => Exception is not null;
 
     private Result(T? data)
     {
@@ -74,7 +72,7 @@ public readonly struct Result<T>
     {
         ArgumentNullException.ThrowIfNull(success);
         if (IsSuccess)
-            success?.Invoke(Data);
+            success.Invoke(Data);
         else
             error?.Invoke(Exception!);
     }
@@ -106,8 +104,6 @@ public readonly struct BooleanResult
 
     public bool IsTrue => IsSuccess && Data is true;
     public bool IsSuccess => Exception is null;
-
-    public bool IsFail => Exception is not null;
 
     private BooleanResult(bool? data)
     {
@@ -150,5 +146,10 @@ public readonly struct BooleanResult
     public static BooleanResult Fail(Exception exception)
     {
         return new BooleanResult(exception);
+    }
+    
+    public static implicit operator bool (BooleanResult result)
+    {
+        return result.IsTrue;
     }
 }

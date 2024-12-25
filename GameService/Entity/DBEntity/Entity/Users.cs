@@ -37,6 +37,14 @@ namespace GameService.Entity.DBEntity.Entity
             CreateTime = DateTime.Now;
         }
 
+        public User(string userName, string userCode, string password)
+        {
+            UserName = userName;
+            UserCode = userCode;
+            Password = password;
+            CreateTime = DateTime.Now;
+        }
+
         public UserInfo ToUserInfo()
         {
             return new UserInfo(Id, UserName!, UserCode!);

@@ -7,5 +7,5 @@ public interface IConfig
 
 public class DefaultConfig : IConfig
 {
-    public string BaseAddress => "http://localhost:5001";
+    public string BaseAddress => "http://localhost:5000";
 }
