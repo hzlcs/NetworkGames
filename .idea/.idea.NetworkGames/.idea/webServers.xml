@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7452690e-0c33-412c-b2a6-8819d2acfa73" name="hzlcs" url="https://hzlcs.cn">
+        <fileTransfer accessType="SFTP" sshConfigId="a258633f-67e8-442d-bbb3-2585423c998f" sshConfig="hzlcs">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

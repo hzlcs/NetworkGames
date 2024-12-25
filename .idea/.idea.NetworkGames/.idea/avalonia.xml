@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Avalonia.GameClient/Avalonia.GameClient/App.axaml" value="Avalonia.GameClient/Avalonia.GameClient.Desktop/Avalonia.GameClient.Desktop.csproj" />
+        <entry key="Avalonia.GameClient/Avalonia.GameClient/Views/ChatView.axaml" value="Avalonia.GameClient/Avalonia.GameClient.Desktop/Avalonia.GameClient.Desktop.csproj" />
+        <entry key="Avalonia.GameClient/Avalonia.GameClient/Views/GameLoadView.axaml" value="Avalonia.GameClient/Avalonia.GameClient.Desktop/Avalonia.GameClient.Desktop.csproj" />
+        <entry key="Avalonia.GameClient/Avalonia.GameClient/Views/GameMainView.axaml" value="Avalonia.GameClient/Avalonia.GameClient.Desktop/Avalonia.GameClient.Desktop.csproj" />
+        <entry key="Avalonia.GameClient/Avalonia.GameClient/Views/LoginView.axaml" value="Avalonia.GameClient/Avalonia.GameClient.Desktop/Avalonia.GameClient.Desktop.csproj" />
+        <entry key="Avalonia.GameClient/Avalonia.GameClient/Views/MainView.axaml" value="Avalonia.GameClient/Avalonia.GameClient.Desktop/Avalonia.GameClient.Desktop.csproj" />
+        <entry key="Avalonia.GameClient/Avalonia.GameClient/Views/MainWindow.axaml" value="Avalonia.GameClient/Avalonia.GameClient.Desktop/Avalonia.GameClient.Desktop.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
